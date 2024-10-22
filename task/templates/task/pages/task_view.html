@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %} | Home {% endblock title %}
+
+{% block content %}
+
+     {% include "task/partials/header.html" %}
+
+     <section class="mb-3">
+      <div class="container mt-5">
+        <div class="row justify-content-beteween mt-3">
+            <div class="grid text-center">
+                  <div class="g-col-4 ">   
+                                      <div class="card" style="width: 25rem;">
+                                          <div class="card-body">
+                                            <h2 class="card-title">{{ task.title }}</h2>
+                                            <p class="card-text">{{ task.description }}</p>
+                                            <p class="card-text"> finish an {{ task.time_completed|date:"H:i"}}</p>
+                                            <p class="card-category"> Category {{ task.category}}</p>
+                                            <p class="card-author">by: {{ task.author.first_name}} {{ task.author.last_name}}</p>
+                                            <a href="" class="btn btn-danger">Delete</a>
+                                            <a href="" class="btn btn-primary">Edit</a>
+                                          </div>
+                                        </div>     
+                  </div>
+                </div>
+        </div>
+      </div>
+     </section>
+     
+
+   
+{% endblock content %}

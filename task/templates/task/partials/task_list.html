@@ -1,0 +1,25 @@
+{% load static %}
+
+
+<div class="container mt-5">
+     <div class="row justify-content-center g-4 mb-3">
+                    {% if task %}
+                            {% for t in task %}
+                            <div class="col-12 col-md-6 col-lg-4">
+                              <div class="card" style="width: 20rem;">
+                                  <div class="card-body">
+                                    <h2 class="card-title">{{ t.title }}</h2>
+                                    <p class="card-text">{{ t.description|slice:":90"}}...</p>
+                                    <p class="card-text"> finish an {{ t.time_completed|date:"H:i"}}</p>
+                                    <p class="card-category"> Category {{ t.category}}</p>
+                                    <p class="card-author">by: {{ t.author.first_name}} {{ t.author.last_name}}</p>
+                                    <a href="{% url 'task:task-view' t.slug %}" class="btn btn-primary">see more</a>
+                                  </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                    {% else %}
+                        <p>Task there is not completed.</p>
+                    {% endif %}
+     </div>
+</div>
