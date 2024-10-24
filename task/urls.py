@@ -6,4 +6,5 @@ app_name = "task"
 urlpatterns = [
     path('', views.Home.as_view(), name="home"),
     path('task/slug:/<slug:slug>/', views.TaskView.as_view(), name='task-view'),
+    path('new_task/', views.NewTaskView.as_view(), name='new-task')
 ]

@@ -1,0 +1,34 @@
+/* Forms */
+.form-content {
+      max-width: 64rem;
+      margin: 0 auto;
+      margin-bottom: white;
+    }
+    .form-content label,
+    .form-content .help-text,
+    .errorlist {
+      display: block;
+      margin: 0.5rem 0;
+      font-size: 1.4rem;
+      list-style-type: none;
+    }
+    .errorlist {
+      color: black;
+    }
+    .form-content input {
+      width: 100%;
+      padding: 1rem;
+      border-radius: 0.4rem;
+      border: 1px solid rgb(2, 2, 67);
+    }
+    .form-content-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+      
+    }
+    .form-content button {
+      padding: 1rem 2rem;
+      border: none;
+      background:  rgb(2, 2, 67);
+      color: white;
+    }

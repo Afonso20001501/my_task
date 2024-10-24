@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+
+
+{% block title %} | Home {% endblock title %}
+
+{% block content %}
+{% include "task/partials/header.html" %}
+     <div class="container">
+      <form action="" class="row p-lg-4 gy-2 mb-0" method="post">
+            {% csrf_token %}
+              <div class="col-12">
+                  <h2 style="font-family: "Barlow", sans-serif !important;">Created new Task</h2>
+
+              </div>
+              <div class="col-12">
+                 <div class="border-top border-primary w-40 mx-auto juntos-content-center mb-4"></div>
+              </div>
+              <div class="col-lg-6">
+                  <input type="text" name="title" class="form-control" id="exampleFormControlInput1" placeholder="title" required>
+              </div>
+              <div class="col-lg-6">
+                  <input type="text" name="slug" class="form-control" id="exampleFormControlInput1" placeholder="slug" required>
+             </div>
+             <div class="col-lg-6">
+                  <input type="text" name="slug" class="form-control" id="exampleFormControlInput1" placeholder="slug" required>
+             </div>
+             <div class="col-12 mb-3">
+                 <textarea name="description" id=""  class="form-control" placeholder="description of the new Task" required></textarea>
+             </div>
+             <div class="col-12">
+                 <button type="submit" name="enviar" class="btn btn-primary">Create</button>
+             </div>
+          </form>
+     </div>
+{% endblock content %}

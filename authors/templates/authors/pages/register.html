@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %} Register  | {% endblock title %}
+
+
+{% block content %}
+
+<div class="container mt-3">
+     <div class="row justify-content-center">
+       <h1 class="text-center">Register {{ request.sesseion.number }} </h1>
+     </div>
+
+     <div class="row justify-content-center">
+          <form  action="" method="POST" class="row g-3 needs-validation" novalidat>
+            {% csrf_token %}
+            <div class="col-md-4 form-content form-content-grid position-relative">
+              {% for field in register_form %} 
+                <div class="form-group">
+                    <label for="{{ field.id_for_label }}" class="form-label"> {{ field.label }} </label>
+                    {{ field }}
+
+                    {% if field.help_text %}
+                      <p class="hepl-text"> {{ field.help_text }} </p>
+                    {% endif %} 
+
+                    {{ field.errors }}  
+                </div>
+              {% endfor %} 
+            </div> 
+            <div class="form-content form-content-grid">
+              <div class="col-12 form-group">
+                <button class="btn btn-primary" type="submit">Submit</button>
+              </div>
+            </div>
+          </form>
+    </div> 
+</div>
+
+{% endblock content %}
